@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:my_own_arkanoid/screens/home_screen.dart';
 
-//TODO １．HomeScreen作成まで
+import 'widgets/screens/home_screen.dart';
+import 'package:google_fonts/google_fonts.dart';
+
+//TODO 1．HomeScreen作成まで（CodeLabにはない）
 // （Codelabはいきなりmain関数内でGameWidget作っているが、ここはみんプロ流で）
 void main() => runApp(MyApp());
 
@@ -12,6 +14,17 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: HomeScreen(),
+      /*
+      * TODO 33: Googleフォントの設定
+      * */
+      theme: ThemeData(
+        useMaterial3: true,
+        textTheme: GoogleFonts.pressStart2pTextTheme().apply(
+          bodyColor: const Color(0xff184e77),
+          displayColor: const Color(0xff184e77),
+        ),
+      ),
     );
+
   }
 }
